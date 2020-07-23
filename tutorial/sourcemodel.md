@@ -346,6 +346,10 @@ Keep in mind that the .pos field in the source models are subject specific. When
 
 If you performed source reconstruction on the cortical surface, and you used the recipe explained earlier in this tutorial, single-subject data can be directly compared across subjects, because the dipole locations are surface-registered to a template.
 
+{% include markup/danger %}
+The same reasoning applies as in the 3D grid case: the individual positions are different, yet thanks to the ’normalization procedure’, the points are equivalent in normalised space. When you want to do group analysis across subjects, which now in principle is allowed due to the equivalence of the dipole positions in normalized space, you need to replace the positions with the normalized positions of the template sourcemodel. Otherwise, FieldTrip will throw an error.
+{% include markup/end %}
+
 ## Summary and further reading
 
 This tutorial explained how to build a sourcemodel that can be used for source-reconstruction of EEG or MEG measurements.
